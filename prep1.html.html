@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Prep 1- Space World</title>
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+         body {
+         font-family: 'Poppins', sans-serif;
+         background: black;
+         color: white;
+         padding: 20px;
+         margin: 0;
+         overflow-x: hidden;
+         position: relative;
+         }
+         .stars {
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         background: black;
+         z-index: 0;
+         }
+         .container {
+         width: 90%;
+         max-width: 1000px;
+         margin: auto;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 20px;
+         position: relative;
+         z-index: 10;
+         }
+         h2 {
+         font-family: 'Orbitron', sans-serif;
+         font-size: 28px;
+         text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+         text-align: center;
+         width: 100%;
+         }
+         .subject {
+         width: 100%;
+         max-width: 600px;
+         display: flex;
+         align-items: center;
+         background: rgba(255, 255, 255, 0.1);
+         padding: 15px;
+         border-radius: 10px;
+         border-left: 5px solid #ffcc00;
+         box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+         justify-content: space-between;
+         }
+         .text {
+         flex: 1;
+         padding-right: 15px;
+         }
+         h3 {
+         font-family: 'Orbitron', sans-serif;
+         font-size: 22px;
+         color: #ffcc00;
+         margin: 0;
+         }
+         p {
+         font-family: 'Poppins', sans-serif;
+         font-size: 18px;
+         margin: 5px 0;
+         }
+         img {
+         width: 200px;
+         height: auto;
+         border-radius: 20px;
+         box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+         }
+         .quiz-button {
+         display: inline-block;
+         padding: 10px 15px;
+         background: linear-gradient(90deg, #28a745, #218838);
+         color: white;
+         border-radius: 8px;
+         text-decoration: none;
+         font-size: 16px;
+         transition: 0.3s;
+         }
+         .quiz-button:hover {
+         background: linear-gradient(90deg, #218838, #1e7e34);
+         }
+         .planet {
+         position: absolute;
+         border-radius: 50%;
+         opacity: 0.7;
+         animation: movePlanet 20s infinite linear;
+         }
+         @keyframes movePlanet {
+         0% { transform: translateY(0); }
+         50% { transform: translateY(20px); }
+         100% { transform: translateY(0); }
+         }
+         .planet1 { width: 80px; height: 80px; background: radial-gradient(circle, #ffcc00, #ff8800); top: 10%; left: 10%; }
+         .planet2 { width: 100px; height: 100px; background: radial-gradient(circle, #77b5fe, #1e90ff); top: 50%; left: 70%; }
+         .planet3 { width: 60px; height: 60px; background: radial-gradient(circle, #ff66b2, #ff1493); top: 80%; left: 30%; }
+      </style>
+   </head>
+   <body>
+      <div class="stars"></div>
+      <div class="planet planet1"></div>
+      <div class="planet planet2"></div>
+      <div class="planet planet3"></div>
+      <div class="container">
+         <h2>🔬 Let's go prep 1 🌌</h2>
+         <div class="subject">
+            <div class="text">
+               <h3>🧪 Physics</h3>
+               <p>- Potential energy</p>
+               <p>-  Kinetic energy</p>
+               <a href="c:\Users\KimoStore\Desktop\ساينس ويب سايت\Physics.html -learn more -prep1.html" class="quiz-button">Learn-More</a>
+            </div>
+            <img src="https://www.careerpower.in/blog/wp-content/uploads/sites/2/2023/08/21182701/Kinetic-Energy.png">
+         </div>
+         <div class="subject">
+            <div class="text">
+               <h3>⚛️ Chemistry</h3>
+               <p>- Metals and Nonmetals</p>
+               <p>- Acida and Alkalis</p>
+               <p>- Properties of sound waves</p>
+			      <p>- Chemical indicators</p>
+               <a href="c:\Users\KimoStore\Desktop\ساينس ويب سايت\Chemistry.html -learn more -prep1.html" class="quiz-button">Learn-More</a>
+            </div>
+            <img src="https://res.cloudinary.com/dpzpn3dkw/image/upload/v1728979157/SEOContent/CBSE%20Notes/metals_and_non_metals_w4njfr.jpg">
+         </div>
+         <div class="subject">
+            <div class="text">
+               <h3>🔥 Biology</h3>
+               <p>- Nutritional relationships in biological communities</p>
+               <p>-  Genetic traits and mutations</p>
+               <a href="c:\Users\KimoStore\Desktop\ساينس ويب سايت\Biology.html -learn more -prep1.html" class="quiz-button">Learn-More</a>
+            </div>
+            <img src="https://ars.els-cdn.com/content/image/3-s2.0-B9780081005965220891-f22089-01-9780128126875.jpg">
+         </div>
+         <div class="subject">
+            <div class="text">
+               <h3>🔥 Geology</h3>
+               <p>- The water cycle</p>
+               <p>- The rock cycle</p>
+               <a href="c:\Users\KimoStore\Desktop\ساينس ويب سايت\Geology.html -learn more -prep1.html" class="quiz-button">Learn-More</a>
+            </div>
+            <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/6d/5c/t2-s-708-the-water-cycle-large-display-poster-_ver_1.jpg">
+         </div>
+      </div>
+   </body>
+</html>
