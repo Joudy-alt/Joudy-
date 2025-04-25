@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Space World</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body onload="checkLogin()">
+    <div class="stars"></div>
+
+    <div class="container">
+        <h1 id="welcome-message">🌌 Welcome to Space World 🚀</h1>
+        <nav>
+            <a href="Prep/prep1.html.html">Prep 1</a>
+            <a href="Prep/prep2.html.html">prep 2</a>
+            <a href="Prep/prep3.html.html">prep 3</a>
+        </nav>
+        <p>Explore the universe of Science in a fun and interactive way!</p>
+        <a href="Joudy.html" style=color:#e60000; class="button-link"> log out</a>
+    </div>
+
+    <script>
+        function checkLogin() {
+            let userData = JSON.parse(localStorage.getItem("user"));
+
+            if (userData) {
+                document.getElementById("welcome-message").innerText = "🚀 Welcome " + userData.name + " to Space World!";
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "Joudy.html";
+        }
+    </script>
+</body>
+</html>
