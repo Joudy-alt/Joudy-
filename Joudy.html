@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Space World</title>
+    <title>Space World</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: black;
             color: white;
             text-align: center;
@@ -16,158 +18,185 @@
             overflow: hidden;
             position: relative;
         }
-        .stars {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: black;
-            z-index: 0;
-        }
-        .stars::after {
-            content: "";
+
+        /* النجوم */
+        .star {
             position: absolute;
             width: 3px;
             height: 3px;
             background: white;
-            box-shadow: 
-            50px 30px white, 100px 900px white, 600px 200px white,
-            150px 90px white, 500px 200px white, 700px 400px white,
-            1000px 100px white, 1000px 10000px white, 900px 1000px white,
-            20px 40px white, 50px 100px white, 200px 300px white,
-            150px 90px white, 500px 200px white, 700px 400px white,
-            20px 40px white, 50px 100px white, 200px 300px white,
-            150px 90px white, 500px 200px white, 700px 400px white,
-            300px 250px white, 100px 550px white, 400px 600px white,
-            600px 50px white, 800px 300px white, 900px 450px white,
-            1100px 200px white, 1300px 600px white, 1400px 700px white,
-            -50px 20px white, -200px 400px white, -300px 150px white,
-            1600px 200px white, 1700px 500px white, 1800px 300px white,
-            -600px 500px white, -700px 200px white, -900px 450px white,
-            1550px 750px white, 1650px 350px white, 1750px 550px white,
-            300px 250px white, 100px 550px white, 400px 600px white,
-            600px 50px white, 800px 300px white, 900px 450px white,
-            1100px 200px white, 1300px 600px white, 1400px 700px white,
-            300px 250px white, 100px 550px white, 400px 600px white,
-            1000px 600px white, 700px 800px white, 500px 600px white,
-            400px 300px white, 200px 300px white, 800px 100px white;
-            animation: twinkle 2s infinite alternate;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 3s infinite alternate;
         }
+
         @keyframes twinkle {
-            0% { opacity: 0.5; }
-            100% { opacity: 1; }
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
         }
+
+        /* الكواكب */
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.9;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .planet.one {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #ffcc00, #ff6600);
+            top: 10%;
+            left: 15%;
+        }
+
+        .planet.two {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #66ccff, #0033cc);
+            top: 50%;
+            left: 70%;
+        }
+
+        .planet.three {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #66ff99, #009933);
+            top: 80%;
+            left: 30%;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
             width: 80%;
-            max-width: 400px;
+            max-width: 500px;
             margin: auto;
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(0, 255, 255, 0.7);
             position: relative;
-            z-index: 10;
+            z-index: 2;
         }
-        h2 {
-            font-size: 26px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        .quiz-button {
+    display: block;
+    width: 90%; /* يجعل الزر طويل */
+    max-width: 300px; /* يحد من الطول ليكون مناسب */
+    padding: 15px; /* يجعل الزر أكبر */
+    margin: 10px auto; /* يوسّطه في الصفحة */
+    background-color: #FF0000; /* لون الخلفية أحمر */
+    color: white; /* لون النص أبيض */
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px; /* يجعل الحواف ناعمة */
+    border: 2px solid #990000; /* لون إطار غامق */
+    transition: 0.3s;
+}
+
+.quiz-button:hover {
+    background-color: #CC0000; /* لون أحمر أغمق عند التمرير */
+    transform: scale(1.05);
+}
+
+
+        h1 {
+            color: cyan;
+            font-size: 24px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px cyan;
         }
-        input {
-            width: 90%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 10px;
-            border: none;
-            font-size: 16px;
-            outline: none;
-            text-align: center;
+
+        nav {
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
             background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 15px;
-            background: linear-gradient(90deg, #00f260, #0575e6);
-            border: none;
-            color: white;
-            font-size: 18px;
+            padding: 10px 20px;
             border-radius: 10px;
-            cursor: pointer;
+            display: inline-block;
+            margin: 10px;
+            font-size: 18px;
             transition: 0.3s;
-            text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
-        button:hover {
-            background: linear-gradient(90deg, #0575e6, #00f260);
+
+        a:hover {
+            background: rgba(255, 255, 255, 0.4);
             transform: scale(1.05);
         }
-        .planet {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.7;
+
+        #logout {
+            background: #ff4d4d;
+            border: none;
+            font-size: 18px;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
         }
-        /* المزيد من الأنيميشن للكواكب */
-        .planet1 { width: 80px; height: 80px; background: radial-gradient(circle, #ffcc00, #ff8800); top: 10%; left: 10%; animation: movePlanet1 15s infinite linear; }
-        .planet2 { width: 100px; height: 100px; background: radial-gradient(circle, #77b5fe, #1e90ff); top: 50%; left: 70%; animation: movePlanet2 20s infinite linear; }
-        .planet3 { width: 60px; height: 60px; background: radial-gradient(circle, #ff66b2, #ff1493); top: 80%; left: 30%; animation: movePlanet3 25s infinite linear; }
-        .planet4 { width: 90px; height: 90px; background: radial-gradient(circle, #8a2be2, #4b0082); top: 30%; left: 40%; animation: movePlanet4 18s infinite linear; }
-        .planet5 { width: 70px; height: 70px; background: radial-gradient(circle, #00ffcc, #0099ff); top: 60%; left: 20%; animation: movePlanet5 22s infinite linear; }
-        .planet6 { width: 110px; height: 110px; background: radial-gradient(circle, #ff4444, #cc0000); top: 75%; left: 85%; animation: movePlanet6 28s infinite linear; }
+
+        #logout:hover {
+            background: #e60000;
+            transform: scale(1.05);
+        }
     </style>
 </head>
-<body>
-    <div class="stars"></div>
-    <div class="planet planet1"></div>
-    <div class="planet planet2"></div>
-    <div class="planet planet3"></div>
-    <div class="planet planet4"></div>
-    <div class="planet planet5"></div>
-    <div class="planet planet6"></div>
-    
+<body onload="checkLogin()">
+    <!-- نجوم عشوائية -->
+    <script>
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement("div");
+            star.className = "star";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(star);
+        }
+    </script>
+
+    <!-- كواكب -->
+    <div class="planet one"></div>
+    <div class="planet two"></div>
+    <div class="planet three"></div>
+
     <div class="container">
-        <h2>🚀 Login to Space World 🌌</h2>
-        <input id="n" placeholder="Name">
-        <input id="e" type="email" placeholder="Email">
-        <input id="p" type="password" placeholder="Password">
-        <!-- إضافة رابط تسجيل الدخول الذي يظهر بعد التحقق -->
-        <a href="#" id="loginLink" class="button-link" style="color:#00f260; display:none;">Log In</a>
-        <button onclick="validate()">Submit</button>
+        <h1 id="welcome-message">🚀 Welcome to Space World 🌌</h1>
+        <nav>
+            <a href="c:\Users\Lenovo\Desktop\1\prep1.html.html">Prep 1</a>
+            <a href="c:\Users\Lenovo\Desktop\1\prep2.html.html">Prep 2</a>
+            <a href="c:\Users\Lenovo\Desktop\1\prep3.html.html">Prep 3</a>
+        </nav>
+        <p>Explore the universe of Science in a fun and interactive way!</p>
+        <a href="c:\Users\Lenovo\Desktop\1\index.html,(first page).html" class="quiz-button">Logout</a>
     </div>
 
     <script>
-        function validate() {
-            let name = document.getElementById("n").value.trim();
-            let email = document.getElementById("e").value.trim();
-            let password = document.getElementById("p").value.trim();
+        function checkLogin() {
+            let userData = JSON.parse(localStorage.getItem("user"));
 
-            // التحقق من البيانات
-            if (!name || !email || !password) {
-                alert("⚠️ Please fill in all fields!");
-                return;
+            if (userData) {
+                document.getElementById("welcome-message").innerText = "🚀 Welcome " + userData.name + " to Space World";
             }
-            if (!email.includes("@") || !email.includes(".")) {
-                alert("⚠️ Please enter a valid email address!");
-                return;
-            }
-            if (password.length < 6) {
-                alert("⚠️ Password must be at least 6 characters long!");
-                return;
-            }
+        }
 
-            // إذا كانت البيانات صحيحة، عرض رابط تسجيل الدخول
-            alert("🎉 Welcome " + name + " to Space World! 🚀");
-            localStorage.setItem("user", JSON.stringify({ name, email }));
-            document.getElementById("loginLink").style.display = "inline-block";
-            
-            //  you can made in comments in middil of code هنا يمكننا توجيه المستخدم إلى صفحة جديدة أو الاحتفاظ بالرابط كما هو
-            document.getElementById("loginLink").href = "index.html";
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "joudy.html";
         }
     </script>
 </body>
