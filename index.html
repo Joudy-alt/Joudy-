@@ -4,41 +4,170 @@
     <meta name="google-site-verification" content="xwnk_03TMRo0GVY0c5ohzQTVCBAqs5vBBSaKvLZ86kA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Space World</title>
-    <link rel="stylesheet" href="css/home.css">
-</head>
-<body onload="checkLogin()">
-    <div class="stars"></div>
+    <title>Login - Space World</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        body {
+    font-family: 'Orbitron', sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    overflow-y: auto; 
+    position: relative;
+    height: 100vh;
+}
 
-    <div class="container">
-        <h1 id="welcome-message">🌌 Welcome to Space World 🚀</h1>
-        <nav>
-            <a href="Prep/prep1.html.html">Prep 1</a>
-            <a href="Prep/prep2.html.html">prep 2</a>
-            <a href="Prep/prep3.html.html">prep 3</a>
-        </nav>
-        <p>Explore the universe of Science in a fun and interactive way!</p>
-        <p>made by 
-            <a href="https://github.com/Joudy-alt">Joudy</a>
-        </p>
-        <p>edited by 
-            <a href="https://github.com/asaadzx">Asaadzx</a>
-        </p>
-        <a href="Joudy.html" style=color:#e60000; class="button-link"> log out</a>
-    </div>
-
-    <script>
-        function checkLogin() {
-            let userData = JSON.parse(localStorage.getItem("user"));
-
-            if (userData) {
-                document.getElementById("welcome-message").innerText = "🚀 Welcome " + userData.name + " to Space World!";
-            }
+        .stars, .planets {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
-
-        function logout() {
-            localStorage.removeItem("user");
-            window.location.href = "Joudy.html";
+        .stars::after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            box-shadow: 50px 30px white, 100px 900px white, 600px 200px white,
+                        150px 90px white, 500px 200px white, 700px 400px white;
+            animation: twinkle 2s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .planet {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #ffcc00, #ff6600);
+            border-radius: 50%;
+            position: absolute;
+            animation: movePlanet 5s infinite alternate ease-in-out;
+        }
+        .planet1 { top: 10%; left: 5%; }
+        .planet2 { top: 60%; right: 19%; animation-delay: 2s; }
+        @keyframes orbit {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .image-left, .image-right {
+            position: absolute;
+            width: 150px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .image-left { left: 5%; }
+        .image-right { right: 5%; }
+        .announcement {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 10;
+            margin-bottom: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 10;
+            
+        }
+        h2 {
+            font-size: 26px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        button {
+            background: linear-gradient(90deg, #00f260, #0575e6);
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+        }
+        button:hover {
+            background: linear-gradient(90deg, #0575e6, #00f260);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="planets">
+        <div class="planet planet1"></div>
+        <div class="planet planet2"></div>
+        <img src="c:\Users\Lenovo\Desktop\1\WhatsApp Image 2025-03-02 at 20.40.55_3d833572.jpg" class="image-left" alt="Planet Left">
+        <img src="c:\Users\Lenovo\Desktop\مشروعات الطلبه 2025\2c  جودي احمد محمد\logo (4).jpg" class="image-right" alt="Planet Right">
+    </div>
+    <div class="announcement">
+        <h3>🌌مسابقه ابداع طموح 🚀</h3>
+        <p>إدارة / شرق</p>
+        <p>مديرة المجمع: مس سمر حسين</p>
+        <p>مديرة المدرسة: مس سعاد الجمال</p>
+        <p>مسؤول الموهوبين: مستر أيمن خالد</p>
+        <p>مسؤول التدريب:محمد طاهر</p>
+        <p>Everything made by / Joudy Ahmed Mohamed Abdallh🌌</p>
+        <p>Mustafa Elnagar school🚀</p>
+        <p>تفتح صفحة صفحة في حاله عدم وجود انترنت🚀</p>
+        <a href="c:\Users\Lenovo\Desktop\1\About us.html.html" class="quiz-button" style="color:#00f260;">About Us</a>
+    </div>
+    <div class="container">
+        <h2>🚀 Login to Space World 🌌</h2>
+        <input id="n" placeholder="Name">
+        <input id="e" type="email" placeholder="Email">
+        <input id="p" type="password" placeholder="Password">
+        <a href="c:\Users\Lenovo\Desktop\1\Home.html.html" id="loginLink" class="button-link" style="color:#00f260; display:none;">Log In</a>
+        <button onclick="validate()">Submit</button>
+    </div>
+    <script>
+        function validate() {
+            let name = document.getElementById("n").value.trim();
+            let email = document.getElementById("e").value.trim();
+            let password = document.getElementById("p").value.trim();
+            if (!name || !email || !password) {
+                alert("⚠️ Please fill in all fields!");
+                return;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("⚠️ Please enter a valid email address!");
+                return;
+            }
+            if (password.length < 6) {
+                alert("⚠️ Password must be at least 6 characters long!");
+                return;
+            }
+            alert("🎉 Welcome " + name + " to Space World! 🚀");
+            localStorage.setItem("user", JSON.stringify({ name, email }));
+            document.getElementById("loginLink").style.display = "inline-block";
         }
     </script>
 </body>
