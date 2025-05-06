@@ -148,8 +148,7 @@
         <input id="n" placeholder="Name">
         <input id="e" type="email" placeholder="Email">
         <input id="p" type="password" placeholder="Password">
-        <a href="Joudy.html">Log In</a>
-        <button onclick="validate()">Submit</button>
+        <button onclick="validate()">Log In</button>
     </div>
     <script>
         function validate() {
@@ -169,6 +168,7 @@
                 return;
             }
             alert("🎉 Welcome " + name + " to Space World! 🚀");
+            window.location.href = "Joudy.html";
             localStorage.setItem("user", JSON.stringify({ name, email }));
             document.getElementById("loginLink").style.display = "inline-block";
         }
