@@ -117,6 +117,30 @@
         button:hover {
             background: linear-gradient(90deg, #0575e6, #00f260);
             transform: scale(1.05);
+        @media (max-width: 600px) {
+    .container, .announcement {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input, button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .image-left, .image-right {
+        display: none; /* نخفي الصور الجانبية لو موجودة */
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+
         }
     </style>
 </head>
