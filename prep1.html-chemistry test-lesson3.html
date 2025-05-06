@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto; 
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            text-align: center;
+        }
+
+        .quiz-item {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .quiz-button {
+            padding: 10px 15px;
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            border-radius: 23px;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 19px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            
+            let correctAnswers = {
+                "q1": "a",
+                "q2": "b",
+                "q3": "c",
+                "q4": "a",
+                "q5": "b", 
+                "q6": "c",
+                "q7": "a",
+                "q8": "b",
+                "q9": "c",
+                "q10": "a"
+            };
+            
+            for (let question in correctAnswers) {
+                let selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Your score: " + score + "/10";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz on Lesson3</h1>
+
+        <div class="quiz-item">
+            <div class="question">1. Which of the following is used as an indicator for acids and alkalis?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Litmus paper</label><br>
+                <label><input type="radio" name="q1" value="b"> Sodium chloride</label><br>
+                <label><input type="radio" name="q1" value="c"> Calcium carbonate</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">2. What color does litmus paper turn when exposed to an acid?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Blue</label><br>
+                <label><input type="radio" name="q2" value="b"> Red</label><br>
+                <label><input type="radio" name="q2" value="c"> Green</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">3. Which of the following salts is commonly formed when an acid reacts with a base?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Sodium chloride</label><br>
+                <label><input type="radio" name="q3" value="b"> Magnesium sulfate</label><br>
+                <label><input type="radio" name="q3" value="c"> Sodium sulfate</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">4. What color does phenolphthalein turn in an alkaline solution?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Pink</label><br>
+                <label><input type="radio" name="q4" value="b"> Yellow</label><br>
+                <label><input type="radio" name="q4" value="c"> Colorless</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">5. What is formed when an acid reacts with a metal?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Salt and water</label><br>
+                <label><input type="radio" name="q5" value="b"> Salt and hydrogen gas</label><br>
+                <label><input type="radio" name="q5" value="c"> Hydrogen gas and oxygen</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">6. What is the pH of a neutral solution?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> 0</label><br>
+                <label><input type="radio" name="q6" value="b"> 7</label><br>
+                <label><input type="radio" name="q6" value="c"> 14</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">7. Which of the following indicators is used for strong acids?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Methyl orange</label><br>
+                <label><input type="radio" name="q7" value="b"> Phenolphthalein</label><br>
+                <label><input type="radio" name="q7" value="c"> Universal indicator</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">8. What is the main component of table salt?</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Sodium chloride</label><br>
+                <label><input type="radio" name="q8" value="b"> Potassium chloride</label><br>
+                <label><input type="radio" name="q8" value="c"> Calcium chloride</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">9. Which of the following substances can be used to test for acids?</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> Sodium hydroxide</label><br>
+                <label><input type="radio" name="q9" value="b"> Litmus paper</label><br>
+                <label><input type="radio" name="q9" value="c"> Water</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">10. Which salt is formed when hydrochloric acid reacts with sodium hydroxide?</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Sodium chloride</label><br>
+                <label><input type="radio" name="q10" value="b"> Sodium sulfate</label><br>
+                <label><input type="radio" name="q10" value="c"> Sodium carbonate</label><br>
+            </div>
+        </div>        
+        
+        <button class="quiz-button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

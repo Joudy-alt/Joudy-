@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto; 
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            text-align: center;
+        }
+
+        .quiz-item {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .quiz-button {
+            padding: 10px 15px;
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            border-radius: 23px;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 19px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            
+            let correctAnswers = {
+                "q1": "b",
+                "q2": "a",
+                "q3": "c",
+                "q4": "a",
+                "q5": "b", 
+                "q6": "a",
+                "q7": "b",
+                "q8": "b",
+                "q9": "c",
+                "q10": "b"
+            };
+            
+            for (let question in correctAnswers) {
+                let selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Your score: " + score + "/10";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz on Lesson 3</h1>
+
+        <div class="quiz-item">
+            <div class="question">1.What is the measure of how soft or loud a sound is? </div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Pitch</label><br>
+                <label><input type="radio" name="q1" value="b"> Intensity </label><br>
+                <label><input type="radio" name="q1" value="c"> Frequency </label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">2.If the wavelength of a sound wave is increased, what would happen to the sound made by this wave?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> It would have a lower pitch</label><br>
+                <label><input type="radio" name="q2" value="b"> It would get softer</label><br>
+                <label><input type="radio" name="q2" value="c"> It would have a higher pitch</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">3.If the wavelength of a sound wave is decreased, what would happen to the sound made by this wave?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> It would have a lower pitch</label><br>
+                <label><input type="radio" name="q3" value="b"> It would get softer</label><br>
+                <label><input type="radio" name="q3" value="c"> It would have a higher pitch</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">4.If the amplitude of a sound wave is decreased, what would happen to the sound made by this wave?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> It would get softer</label><br>
+                <label><input type="radio" name="q4" value="b"> It would get louder</label><br>
+                <label><input type="radio" name="q4" value="c"> It would have a higher pitch</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">5.The spread apart regions of particles in a sound wave are called ____? </div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Compressions</label><br>
+                <label><input type="radio" name="q5" value="b"> Rarefactions</label><br>
+                <label><input type="radio" name="q5" value="c"> Frequencies</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">6.As sound waves travel through air, they cause air molecules to ___? </div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> vibrate</label><br>
+                <label><input type="radio" name="q6" value="b"> Lose energy</label><br>
+                <label><input type="radio" name="q6" value="c"> Be absorbed</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">7.The pressed together regions of particles in a sound wave are called ____? </div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> rarefactions</label><br>
+                <label><input type="radio" name="q7" value="b"> frequencies</label><br>
+                <label><input type="radio" name="q7" value="b"> Compressions </label><br>
+                
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">8.What do sound waves need to travel through?? </div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> a light</label><br>
+                <label><input type="radio" name="q8" value="b"> a medium</label><br>
+                <label><input type="radio" name="q8" value="c">a wave</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">9.Which of the following is the unit for measuring loudness of sounds?   
+                 </div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> Coulomb</label><br>
+                <label><input type="radio" name="q9" value="b"> Ampere</label><br>
+                <label><input type="radio" name="q9" value="c"> Cecibel</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">10.A big dog's bark has a  ______ pitch than a small dog's bark? </div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Higher</label><br>
+                <label><input type="radio" name="q10" value="b"> Lower</label><br>
+            </div>
+        </div>
+        
+       
+        
+        <button class="quiz-button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

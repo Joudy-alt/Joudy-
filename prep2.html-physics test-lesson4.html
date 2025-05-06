@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto; 
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            text-align: center;
+        }
+
+        .quiz-item {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .quiz-button {
+            padding: 10px 15px;
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            border-radius: 23px;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 19px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            
+            let correctAnswers = {
+                "q1": "c",
+                "q2": "a",
+                "q3": "a",
+                "q4": "b",
+                "q5": "a", 
+                "q6": "b",
+                "q7": "c",
+                "q8": "b",
+                "q9": "a",
+                "q10": "b"
+            };
+            
+            for (let question in correctAnswers) {
+                let selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Your score: " + score + "/10";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz on Lesson 4</h1>
+
+        <div class="quiz-item">
+            <div class="question">1.Which of the following is a false statement? </div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> All points on a given wave front have the same phase</label><br>
+                <label><input type="radio" name="q1" value="b"> The spacing between adjacent wave fronts is one-half wavelength</label><br>
+                <label><input type="radio" name="q1" value="c"> All wave fronts have the same amplitude </label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">2.The wave theory of light is attributed to?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Christian Huygens</label><br>
+                <label><input type="radio" name="q2" value="b"> Isaac Newton</label><br>
+                <label><input type="radio" name="q2" value="c"> Max Planck</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">3.When a light wave enters into a medium of different optical density?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Its speed and wavelength change</label><br>
+                <label><input type="radio" name="q3" value="b"> Its speed and frequency change</label><br>
+                <label><input type="radio" name="q3" value="c"> Its speed, frequency, and wavelength change</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">4.Which of the following best describes the nature of light?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Light is a wave</label><br>
+                <label><input type="radio" name="q4" value="b"> Light is both a wave and a particle</label><br>
+                <label><input type="radio" name="q4" value="c"> Light is neither a wave nor a particle</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">5.Material objects cannot travel faster than the speed of light?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> True</label><br>
+                <label><input type="radio" name="q5" value="b"> False</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">6.A light wave travels in only one plane? </div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> True</label><br>
+                <label><input type="radio" name="q6" value="b"> False</label><br>
+               
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">7.Material that allows light to pass through allowing you to see "clearly" to the other side?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Opaque</label><br>
+                <label><input type="radio" name="q7" value="b"> Translucent</label><br>
+                <label><input type="radio" name="q7" value="c"> Transparent </label><br>
+                
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">8.Wax paper or a foggy window is an example of what type of material? </div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> transparent</label><br>
+                <label><input type="radio" name="q8" value="b"> translucent</label><br>
+                <label><input type="radio" name="q8" value="c">a wave</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">9.Light is a type of ENERGY?   
+                 </div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a">True</label><br>
+                <label><input type="radio" name="q9" value="b">False</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">10.Which statement(s) about light is/are TRUE? </div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a">Light is produced by all visible objects</label><br>
+                <label><input type="radio" name="q10" value="b">Light is a energy</label><br>
+            </div>
+        </div>
+        
+       
+        
+        <button class="quiz-button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

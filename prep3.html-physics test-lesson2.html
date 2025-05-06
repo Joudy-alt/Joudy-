@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto; 
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            text-align: center;
+        }
+
+        .quiz-item {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .quiz-button {
+            padding: 10px 15px;
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            border-radius: 23px;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 19px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            
+            let correctAnswers = {
+                "q1": "a",
+                "q2": "b",
+                "q3": "c",
+                "q4": "a",
+                "q5": "c", 
+                "q6": "b",
+                "q7": "a",
+                "q8": "b",
+                "q9": "c",
+                "q10": "a"
+            };
+            
+            for (let question in correctAnswers) {
+                let selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Your score: " + score + "/10";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz on Lesson2</h1>
+
+        <div class="quiz-item">
+            <div class="question">1. What is the function of a battery in a circuit?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> It provides the electric current for the circuit</label><br>
+                <label><input type="radio" name="q1" value="b"> It absorbs the electric current</label><br>
+                <label><input type="radio" name="q1" value="c"> It prevents the current from flowing</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">2. What is the unit of electric current?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Volt</label><br>
+                <label><input type="radio" name="q2" value="b"> Ampere</label><br>
+                <label><input type="radio" name="q2" value="c"> Ohm</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">3. What is the role of an electrolyte in a cell?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> It controls the voltage</label><br>
+                <label><input type="radio" name="q3" value="b"> It conducts electric current</label><br>
+                <label><input type="radio" name="q3" value="c"> It stores electric energy</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">4. Which type of current is produced by a battery?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Direct Current (DC)</label><br>
+                <label><input type="radio" name="q4" value="b"> Alternating Current (AC)</label><br>
+                <label><input type="radio" name="q4" value="c"> Both DC and AC</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">5. What happens if the battery in a circuit is removed?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> The current will continue to flow</label><br>
+                <label><input type="radio" name="q5" value="b"> The current will stop flowing</label><br>
+                <label><input type="radio" name="q5" value="c"> The voltage will increase</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">6. Which of the following is a non-rechargeable cell?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Lithium cell</label><br>
+                <label><input type="radio" name="q6" value="b"> Alkaline cell</label><br>
+                <label><input type="radio" name="q6" value="c"> Lead-acid cell</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">7. What does a voltmeter measure in a circuit?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Voltage</label><br>
+                <label><input type="radio" name="q7" value="b"> Current</label><br>
+                <label><input type="radio" name="q7" value="c"> Resistance</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">8. What is the purpose of a switch in an electric circuit?</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> To control the flow of current</label><br>
+                <label><input type="radio" name="q8" value="b"> To measure the resistance</label><br>
+                <label><input type="radio" name="q8" value="c"> To generate electric current</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">9. Which of the following is a feature of a dry cell?</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> It uses a liquid electrolyte</label><br>
+                <label><input type="radio" name="q9" value="b"> It uses a solid electrolyte</label><br>
+                <label><input type="radio" name="q9" value="c"> It produces alternating current</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">10. What does a conductor do in an electric circuit?</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> It allows the current to flow</label><br>
+                <label><input type="radio" name="q10" value="b"> It stops the current</label><br>
+                <label><input type="radio" name="q10" value="c"> It stores electric charge</label><br>
+            </div>
+        </div>        
+
+        <button class="quiz-button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

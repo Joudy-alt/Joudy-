@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            text-align: center;
+        }
+
+        .quiz-item {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .quiz-button {
+            padding: 10px 15px;
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            border-radius: 23px;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 19px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            
+            let correctAnswers = {
+                "q1": "b",
+                "q2": "c",
+                "q3": "a",
+                "q4": "a",
+                "q5": "b",
+                "q6": "b",
+                "q7": "b",
+                "q8": "a",
+                "q9": "b",
+                "q10": "b"
+            };
+            
+            for (let question in correctAnswers) {
+                let selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Your score: " + score + "/10";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz on Lesson1</h1>
+
+        <div class="quiz-item">
+            <div class="question">1. What are the main properties of metals?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Dull, non-conductive to heat</label><br>
+                <label><input type="radio" name="q1" value="b"> Shiny, conductive to heat and electricity</label><br>
+                <label><input type="radio" name="q1" value="c"> Dull, does not conduct heat or electricity</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">2. Which of the following is a non-metallic material?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Iron</label><br>
+                <label><input type="radio" name="q2" value="b"> Aluminum</label><br>
+                <label><input type="radio" name="q2" value="c"> Sulfur</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">3. Which of the following elements reacts with acids to produce hydrogen gas?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Aluminum</label><br>
+                <label><input type="radio" name="q3" value="b"> Copper</label><br>
+                <label><input type="radio" name="q3" value="c"> Phosphorus</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">4. Which of the following metals is a good conductor of electricity?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Gold</label><br>
+                <label><input type="radio" name="q4" value="b"> Sulfur</label><br>
+                <label><input type="radio" name="q4" value="c"> Carbon</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">5. Which of the following materials does not have a metallic luster?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Iron</label><br>
+                <label><input type="radio" name="q5" value="b"> Graphite</label><br>
+                <label><input type="radio" name="q5" value="c"> Mercury</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">6. What property distinguishes non-metals from metals?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> They are conductive to electricity</label><br>
+                <label><input type="radio" name="q6" value="b"> They are non-conductive to electricity</label><br>
+                <label><input type="radio" name="q6" value="c"> They can be stretched easily</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">7. Which of the following is considered a metal?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Oxygen</label><br>
+                <label><input type="radio" name="q7" value="b"> Copper</label><br>
+                <label><input type="radio" name="q7" value="c"> Carbon</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">8. Which of the following materials is a good insulator of electricity?</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Glass</label><br>
+                <label><input type="radio" name="q8" value="b"> Copper</label><br>
+                <label><input type="radio" name="q8" value="c"> Silver</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">9. Which of the following elements is classified as a non-metal?</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> Gold</label><br>
+                <label><input type="radio" name="q9" value="b"> Helium</label><br>
+                <label><input type="radio" name="q9" value="c"> Iron</label><br>
+            </div>
+        </div>
+        
+        <div class="quiz-item">
+            <div class="question">10. Which of the following compounds is a metallic compound?</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Carbon dioxide</label><br>
+                <label><input type="radio" name="q10" value="b"> Iron oxide</label><br>
+                <label><input type="radio" name="q10" value="c"> Water</label><br>
+            </div>
+        </div>        
+
+        <button class="quiz-button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

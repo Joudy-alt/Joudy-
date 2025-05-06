@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto; 
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            text-align: center;
+        }
+
+        .quiz-item {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .quiz-button {
+            padding: 10px 15px;
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            border-radius: 23px;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 19px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            
+            let correctAnswers = {
+                "q1": "b",
+                "q2": "c",
+                "q3": "a",
+                "q4": "c",
+                "q5": "a", 
+                "q6": "b",
+                "q7": "a",
+                "q8": "c",
+                "q9": "b",
+                "q10": "a"
+            };
+            
+            for (let question in correctAnswers) {
+                let selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Your score: " + score + "/10";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz on Lesson2</h1>
+
+        <div class="quiz-item">
+            <div class="question">1. What is the male reproductive cell called?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Ovum</label><br>
+                <label><input type="radio" name="q1" value="b"> Sperm</label><br>
+                <label><input type="radio" name="q1" value="c"> Embryo</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">2. Where does fertilization occur in humans?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Uterus</label><br>
+                <label><input type="radio" name="q2" value="b"> Ovary</label><br>
+                <label><input type="radio" name="q2" value="c"> Fallopian tube</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">3. What is the function of the placenta?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Provides oxygen and nutrients to the fetus</label><br>
+                <label><input type="radio" name="q3" value="b"> Produces sperm</label><br>
+                <label><input type="radio" name="q3" value="c"> Helps in digestion</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">4. What is the female reproductive organ where a baby develops?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Ovary</label><br>
+                <label><input type="radio" name="q4" value="b"> Fallopian tube</label><br>
+                <label><input type="radio" name="q4" value="c"> Uterus</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">5. Which hormone is responsible for female secondary sexual characteristics?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Estrogen</label><br>
+                <label><input type="radio" name="q5" value="b"> Testosterone</label><br>
+                <label><input type="radio" name="q5" value="c"> Insulin</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">6. What is the term for the process of releasing an egg from the ovary?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Fertilization</label><br>
+                <label><input type="radio" name="q6" value="b"> Ovulation</label><br>
+                <label><input type="radio" name="q6" value="c"> Implantation</label><br>
+            </div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="question">7. What is the function of the umbilical cord?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Connects fetus to placenta</label><br>
+                <label><input type="radio" name="q7" value="b"> Produces eggs</label><br>
+                <label><input type="radio" name="q7" value="c"> Aids digestion</label><br>
+            </div>
+
+            <div class="quiz-item">
+                <div class="question">8. What is the function of the amniotic fluid?</div>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> Helps in digestion</label><br>
+                    <label><input type="radio" name="q8" value="b"> Protects the fetus</label><br>
+                    <label><input type="radio" name="q8" value="c"> Produces hormones</label><br>
+                </div>
+            </div>
+    
+            <div class="quiz-item">
+                <div class="question">9. Which organ produces sperm in males?</div>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> Urethra</label><br>
+                    <label><input type="radio" name="q9" value="b"> Testes</label><br>
+                    <label><input type="radio" name="q9" value="c"> Bladder</label><br>
+                </div>
+            </div>
+    
+            <div class="quiz-item">
+                <div class="question">10. What is the first stage of human development after fertilization?</div>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> Zygote</label><br>
+                    <label><input type="radio" name="q10" value="b"> Embryo</label><br>
+                    <label><input type="radio" name="q10" value="c"> Fetus</label><br>
+                </div>
+            </div>
+    
+        </div>
+
+        <button class="quiz-button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
